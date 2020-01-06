@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Code, SEO } from "../components"
+import { Code, SEO } from "src/components"
 
 const Animations = () => (
   <>

@@ -1,8 +1,8 @@
 import React from "react"
 
-import AppTheme from "./AppTheme"
-import AppContexts from "./AppContexts"
-import Layout from "./layout"
+import AppTheme from "src/AppTheme"
+import AppContexts from "src/AppContexts"
+import Layout from "src/layout"
 
 const App: React.FC = ({ children }) => (
   <AppTheme>
