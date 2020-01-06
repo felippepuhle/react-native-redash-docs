@@ -1,19 +1,85 @@
-import React, { useEffect } from "react"
-import Prism from "prismjs"
+import React from "react"
+import Highlight, { defaultProps } from "prism-react-renderer"
+import theme from "prism-react-renderer/themes/oceanicNext"
+import styled from "styled-components"
+
+const Pre = styled.pre`
+  padding: 1em;
+  border-radius: 0.3em;
+  font-size: 1em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  tab-size: 4;
+  hyphens: none;
+
+  position: relative;
+  padding-left: 3.8em;
+  counter-reset: linenumber;
+
+  .token {
+    color: inherit;
+  }
+`
+
+const LineNumbers = styled.div`
+  position: absolute;
+  pointer-events: none;
+  top: 1em;
+  font-size: 100%;
+  left: 0;
+  width: 3em;
+  letter-spacing: -1px;
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+  -webkit-user-select: none;
+`
+
+const Number = styled.div`
+  pointer-events: none;
+  display: block;
+  counter-increment: linenumber;
+
+  :before {
+    content: counter(linenumber);
+    color: rgba(255, 255, 255, 0.5);
+    display: block;
+    padding-right: 0.8em;
+    text-align: right;
+  }
+`
 
 type Props = {
-  children: string
+  code: string
 }
 
-const Code: React.FC<Props> = ({ children }) => {
-  useEffect(() => {
-    Prism.highlightAll()
-  }, [children])
+const Code: React.FC<Props> = ({ code }) => (
+  <Highlight
+    {...defaultProps}
+    theme={theme}
+    code={code.trim()}
+    language="javascript"
+  >
+    {({ className, style, tokens, getLineProps, getTokenProps }) => (
+      <Pre className={className} style={style}>
+        {tokens.map((line, i) => (
+          <div {...getLineProps({ line, key: i })}>
+            {line.map((token, key) => (
+              <span {...getTokenProps({ token, key })} />
+            ))}
+          </div>
+        ))}
 
-  return (
-    <pre className="line-numbers">
-      <code className="language-js">{children.trim("\n")}</code>
-    </pre>
-  )
-}
+        <LineNumbers>
+          {tokens.map((line, i) => (
+            <Number key={i} />
+          ))}
+        </LineNumbers>
+      </Pre>
+    )}
+  </Highlight>
+)
+
 export default Code

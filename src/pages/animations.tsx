@@ -12,15 +12,15 @@ const Animations = () => (
 
     <p>Interpolate the node from 0 to 1 without clamping.</p>
 
-    <Code>
-      {`
+    <Code
+      code={`
 const animation = useTransition(isVisible)
 
 const styles = {
   opacity: bInterpolate(animation, 1, 0),
 }
-    `}
-    </Code>
+      `}
+    />
   </>
 )
 
