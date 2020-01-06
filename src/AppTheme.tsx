@@ -34,6 +34,11 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+  h1 {
+    padding-left: 8px;
+    border-left: 4px solid ${({ theme }) => theme.colors.MAIN};
+  }
+
   * {
     font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
     color: #24292e;
