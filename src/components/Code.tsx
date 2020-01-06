@@ -15,6 +15,8 @@ const Pre = styled.pre`
   line-height: 1.5;
   tab-size: 4;
   hyphens: none;
+  max-width: 100%;
+  overflow-x: auto;
 
   position: relative;
   padding-left: 3.8em;

@@ -19,6 +19,7 @@ const Main = styled.main`
   z-index: 5;
   flex: 1;
   display: flex;
+  max-width: 100%;
 
   @media (${MEDIA.LG}) {
     padding-left: ${SIDEBAR_WIDTH}px;
@@ -28,6 +29,7 @@ const Main = styled.main`
 const MainInner = styled.div`
   position: relative;
   flex: 1;
+  max-width: 100%;
 `
 
 const MainContainer = styled.div`
@@ -37,6 +39,7 @@ const MainContainer = styled.div`
   max-width: 100%;
 
   @media (${MEDIA.LG}) {
+    width: 920px;
     padding: 40px;
   }
 `

@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     flex: 1;
     display: flex;
+    max-width: 100%;
   }
 
   #___gatsby {
