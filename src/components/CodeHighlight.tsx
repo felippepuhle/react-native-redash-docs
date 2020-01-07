@@ -57,7 +57,7 @@ type Props = {
   code: string
 }
 
-const Code: React.FC<Props> = ({ code }) => (
+const CodeHighlight: React.FC<Props> = ({ code }) => (
   <Highlight
     {...defaultProps}
     theme={theme}
@@ -84,4 +84,4 @@ const Code: React.FC<Props> = ({ code }) => (
   </Highlight>
 )
 
-export default Code
+export default CodeHighlight

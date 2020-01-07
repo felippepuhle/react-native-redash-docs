@@ -58,6 +58,9 @@ typings/
 .cache/
 public
 
+# react-native-web files
+.expo
+
 # Mac files
 .DS_Store
 

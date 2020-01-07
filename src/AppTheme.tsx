@@ -1,5 +1,6 @@
 import React from "react"
 import { ThemeProvider, createGlobalStyle } from "styled-components"
+import { ThemeProvider as RNThemeProvider } from "styled-components/native"
 
 import { THEME } from "src/styles"
 
@@ -50,10 +51,12 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const AppTheme: React.FC = ({ children }) => (
-  <ThemeProvider theme={THEME}>
-    <GlobalStyle />
-    {children}
-  </ThemeProvider>
+  <RNThemeProvider theme={THEME}>
+    <ThemeProvider theme={THEME}>
+      <GlobalStyle />
+      {children}
+    </ThemeProvider>
+  </RNThemeProvider>
 )
 
 export default AppTheme
