@@ -3,7 +3,6 @@ import Animated from "react-native-reanimated"
 import { useTransition, bInterpolate } from "react-native-redash"
 
 import { Playground, SEO, IPhone } from "src/components"
-import { MEDIA } from "src/styles"
 
 const Animations = () => {
   const [isVisible, setVisible] = useState(true)
