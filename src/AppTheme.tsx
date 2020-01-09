@@ -37,8 +37,44 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    padding-left: 8px;
+    padding-left: 12px;
     border-left: 4px solid ${({ theme }) => theme.colors.MAIN};
+  }
+
+  p {
+    code {
+      padding: 3px 6px;
+      margin: 0;
+      font-size: 85%;
+      font-weight: 500;
+      background-color: ${({ theme }) => theme.colors.SILVER};
+      border-radius: 3px;
+    }
+  }
+
+  table {
+    display: block;
+    width: 100%;
+    overflow: auto;
+    border-spacing: 0;
+    border-collapse: collapse;
+
+    tr {
+      background-color: ${({ theme }) => theme.colors.WHITE};
+      border-top: 1px solid ${({ theme }) => theme.colors.SILVER};
+    }
+    tr:nth-child(2n) {
+      background-color: ${({ theme }) => theme.colors.SILVER};
+    }
+
+    td, th {
+      padding: 6px 13px;
+      border: 1px solid ${({ theme }) => theme.colors.SILVER};
+    }
+
+    th {
+      font-weight: 600;
+    }
   }
 
   * {

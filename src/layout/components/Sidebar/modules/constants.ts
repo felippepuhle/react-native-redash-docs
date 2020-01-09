@@ -23,6 +23,11 @@ export const SIDEBAR_ITEMS: SidebarItem[] = [
   },
   {
     type: "single",
+    label: "Usage",
+    to: "/usage/",
+  },
+  {
+    type: "single",
     label: "Components",
     to: "/components/",
   },
@@ -119,7 +124,6 @@ export const SIDEBAR_ITEMS: SidebarItem[] = [
         label: "verticalPanGestureHandler",
         to: "/gestures/verticalPanGestureHandler/",
       },
-      { label: "panGestureHandler", to: "/gestures/panGestureHandler/" },
       { label: "withSpring", to: "/gestures/withSpring/" },
       { label: "withDecay", to: "/gestures/withDecay/" },
       { label: "withOffset", to: "/gestures/withOffset/" },
@@ -127,7 +131,6 @@ export const SIDEBAR_ITEMS: SidebarItem[] = [
         label: "preserveMultiplicativeOffset",
         to: "/gestures/preserveMultiplicativeOffset/",
       },
-      { label: "spring", to: "/gestures/spring/" },
     ],
   },
 ]

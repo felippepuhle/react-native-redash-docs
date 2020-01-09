@@ -1,6 +1,6 @@
 import React from "react"
 
-import { SEO } from "src/components"
+import { CodeHighlight, SEO } from "src/components"
 
 const ComponentsPage: React.FC = () => (
   <>
@@ -8,7 +8,15 @@ const ComponentsPage: React.FC = () => (
 
     <h1>Components</h1>
 
-    <p>@TODO</p>
+    <h2>ReText</h2>
+
+    <p>Component that displays an animation value as text.</p>
+
+    <CodeHighlight
+      code={`
+<ReText text={new Value("hello world!")} style={{ color: "blue" }} />
+      `}
+    />
   </>
 )
 
