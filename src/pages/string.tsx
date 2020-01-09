@@ -2,7 +2,7 @@ import React from "react"
 
 import { SEO } from "src/components"
 
-const String = () => (
+const StringPage: React.FC = () => (
   <>
     <SEO title="String" />
 
@@ -12,4 +12,4 @@ const String = () => (
   </>
 )
 
-export default String
+export default StringPage

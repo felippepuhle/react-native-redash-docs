@@ -2,7 +2,7 @@ import React from "react"
 
 import { SEO } from "src/components"
 
-const Transitions = () => (
+const TransitionsPage: React.FC = () => (
   <>
     <SEO title="Transitions" />
 
@@ -12,4 +12,4 @@ const Transitions = () => (
   </>
 )
 
-export default Transitions
+export default TransitionsPage

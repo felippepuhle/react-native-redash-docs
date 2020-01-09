@@ -1,20 +1,16 @@
-import React, { useState, useEffect } from "react"
-import { globalHistory } from "@reach/router"
+import React, { useState, useEffect, useContext } from "react"
 
+import RouterContext from "./RouterContext"
 import LayoutContext from "./LayoutContext"
 
 const LayoutProvider: React.FC = ({ children }) => {
   const [isMobileSidebarVisible, setMobileSidebarVisible] = useState(false)
 
-  useEffect(() => {
-    const removeListener = globalHistory.listen(() =>
-      setMobileSidebarVisible(false)
-    )
+  const { pathname } = useContext(RouterContext)
 
-    return () => {
-      removeListener()
-    }
-  }, [])
+  useEffect(() => {
+    setMobileSidebarVisible(false)
+  }, [pathname])
 
   return (
     <LayoutContext.Provider

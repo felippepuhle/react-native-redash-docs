@@ -1,9 +1,9 @@
 import React, { useContext } from "react"
 import styled from "styled-components"
 
-import { BurgerButton } from "../../components"
-import { LayoutContext } from "../../contexts"
-import { MEDIA } from "../../styles"
+import { BurgerButton } from "src/components"
+import { LayoutContext } from "src/contexts"
+import { MEDIA } from "src/styles"
 
 const Wrapper = styled.header`
   position: absolute;

@@ -2,7 +2,7 @@ import React from "react"
 
 import { SEO } from "src/components"
 
-const IndexPage = () => (
+const IndexPage: React.FC = () => (
   <>
     <SEO title="Home" />
 

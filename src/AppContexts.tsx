@@ -1,9 +1,11 @@
 import React from "react"
 
-import { LayoutProvider } from "src/contexts"
+import { LayoutProvider, RouterProvider } from "src/contexts"
 
 const AppContexts: React.FC = ({ children }) => (
-  <LayoutProvider>{children}</LayoutProvider>
+  <RouterProvider>
+    <LayoutProvider>{children}</LayoutProvider>
+  </RouterProvider>
 )
 
 export default AppContexts

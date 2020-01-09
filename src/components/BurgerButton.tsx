@@ -18,7 +18,7 @@ const StyledButton = styled.button`
 const Line = styled.div`
   width: ${BUTTON_SIZE_REM}rem;
   height: ${BUTTON_SIZE_REM / 8}rem;
-  background: ${({ theme }) => theme.colors.BLACK};
+  background: ${({ theme }) => theme.colors.BLACK_SHARK};
   border-radius: 10px;
   transition: all 0.3s linear;
   position: relative;

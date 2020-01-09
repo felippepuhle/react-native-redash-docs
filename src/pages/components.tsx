@@ -2,7 +2,7 @@ import React from "react"
 
 import { SEO } from "src/components"
 
-const Components = () => (
+const ComponentsPage: React.FC = () => (
   <>
     <SEO title="Components" />
 
@@ -12,4 +12,4 @@ const Components = () => (
   </>
 )
 
-export default Components
+export default ComponentsPage

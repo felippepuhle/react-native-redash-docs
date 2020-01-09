@@ -1,7 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 
-import { MEDIA } from "../styles"
+import { MEDIA } from "src/styles"
+
 import { SIDEBAR_WIDTH } from "./modules/constants"
 import Header from "./components/Header"
 import Sidebar from "./components/Sidebar"

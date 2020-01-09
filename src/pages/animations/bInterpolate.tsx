@@ -4,17 +4,15 @@ import { useTransition, bInterpolate } from "react-native-redash"
 
 import { Playground, SEO, IPhone } from "src/components"
 
-const Animations = () => {
+const BInterpolatePage: React.FC = () => {
   const [isVisible, setVisible] = useState(true)
   const visibleAnimation = useTransition(isVisible)
 
   return (
     <>
-      <SEO title="Animations" />
+      <SEO title="bInterpolate - Animations" />
 
-      <h1>Animations</h1>
-
-      <h2>bInterpolate(node: Node, from: Node, to: Node): Node</h2>
+      <h1>bInterpolate(node: Node, from: Node, to: Node): Node</h1>
 
       <p>Interpolate the node from 0 to 1 without clamping.</p>
 
@@ -60,4 +58,4 @@ return (
   )
 }
 
-export default Animations
+export default BInterpolatePage

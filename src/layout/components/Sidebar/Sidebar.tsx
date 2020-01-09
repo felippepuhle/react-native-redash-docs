@@ -1,10 +1,13 @@
 import React, { useContext } from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
 
-import { LayoutContext } from "../../contexts"
-import { MEDIA } from "../../styles"
-import { SIDEBAR_WIDTH } from "../modules/constants"
+import { LayoutContext } from "src/contexts"
+import { MEDIA } from "src/styles"
+
+import { SIDEBAR_WIDTH } from "../../modules/constants"
+import { SIDEBAR_ITEMS } from "./modules/constants"
+import MultipleLinkItem from "./components/MultipleLinkItem"
+import SingleLinkItem from "./components/SingleLinkItem"
 
 const Overlay = styled.div<{ isMobileSidebarVisible: boolean }>`
   transition: opacity 300ms linear;
@@ -32,8 +35,9 @@ const ASide = styled.aside<{ isMobileSidebarVisible: boolean }>`
     isMobileSidebarVisible ? 0 : -SIDEBAR_WIDTH}px;
   z-index: 10;
   width: ${SIDEBAR_WIDTH}px;
-  background: #f6f8fa;
+  background: ${({ theme }) => theme.colors.SILVER};
   padding: 40px 20px;
+  overflow-y: auto;
 
   @media (${MEDIA.LG}) {
     left: 0;
@@ -63,19 +67,6 @@ const Menu = styled.div`
   padding: 20px 0;
 `
 
-const MenuItem = styled(Link).attrs({ activeClassName: "active" })`
-  transition: color 300ms;
-  padding: 10px 0px;
-  font-weight: 600;
-  color: ${({ theme }) => theme.colors.BLACK};
-  text-decoration: none;
-
-  &.active,
-  &:hover {
-    color: ${({ theme }) => theme.colors.MAIN};
-  }
-`
-
 const Sidebar: React.FC = () => {
   const { isMobileSidebarVisible, setMobileSidebarVisible } = useContext(
     LayoutContext
@@ -92,16 +83,13 @@ const Sidebar: React.FC = () => {
         <SearchInput placeholder="Search..." />
 
         <Menu>
-          <MenuItem to="/">Home</MenuItem>
-          <MenuItem to="/components">Components</MenuItem>
-          <MenuItem to="/svg">SVG</MenuItem>
-          <MenuItem to="/math">Math</MenuItem>
-          <MenuItem to="/string">String</MenuItem>
-          <MenuItem to="/array">Array</MenuItem>
-          <MenuItem to="/transitions">Transitions</MenuItem>
-          <MenuItem to="/animations">Animations</MenuItem>
-          <MenuItem to="/transformations">Transformations</MenuItem>
-          <MenuItem to="/gestures">Gestures</MenuItem>
+          {SIDEBAR_ITEMS.map((item, index) => {
+            if (item.type === "single") {
+              return <SingleLinkItem key={index} {...item} />
+            }
+
+            return <MultipleLinkItem key={index} {...item} />
+          })}
         </Menu>
       </ASide>
     </>
